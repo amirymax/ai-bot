@@ -8,7 +8,7 @@ client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'),)
 
 history: dict[int, list] = {}
 
-SYSTEM_PROMPT = 'Tу ёрдамчии хушмуомила ҳастӣ. Кӯтоҳ ва фаҳмо ҷавоб деҳ'
+SYSTEM_PROMPT = 'Tу ёрдамчии хушмуомила ҳастӣ. Беҳад Кӯтоҳ ва фаҳмо ҷавоб деҳ'
 
 def chat(user_id: int, text: str) -> str:
     if user_id not in history:
