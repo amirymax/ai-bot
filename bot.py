@@ -55,6 +55,7 @@ async def ai_response(message: types.Message):
 
     elif user_modes[message.from_user.id] == 'image':
         await message.answer('🎨 Расми шуморо тайёр карда истодаем...')
+        await message.answer('Ин тахминан 30 сония вақт мегирад')
         try:
             filename = generate_image(message.from_user.id, message.text)
             photo = FSInputFile(filename)
