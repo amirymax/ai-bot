@@ -48,7 +48,7 @@ async def say_hello(message: types.Message):
 
 @dp.message(lambda message: message.text == "👋🏻 Салом")
 async def say_hello(message: types.Message):
-    await message.answer('Салом')
+    await message.answer('Воалекум салом ака сози?')
 
 @dp.message()
 async def ai_response(message: types.Message):
