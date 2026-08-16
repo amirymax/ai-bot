@@ -20,6 +20,7 @@ def get_main_keyboard():
     builder.add(types.KeyboardButton(text="💬 ИИ ЧАТ"))
     builder.add(types.KeyboardButton(text="🎨 РАСМ"))
     builder.add(types.KeyboardButton(text="🔍 ҶУСТУҶӮ"))
+    builder.add(types.KeyboardButton(text='👋🏻 Салом'))
     return builder.as_markup(resize_keyboard=True)
 
 
@@ -28,23 +29,26 @@ async def cmd_start(message: types.Message):
     await message.answer("Салом! Тугмаи поёнро зер кунед:", reply_markup=get_main_keyboard())
 
 
-@dp.message(lambda message: message.text == "💬ИИ ЧАТ")
+@dp.message(lambda message: message.text == "💬 ИИ ЧАТ")
 async def say_hello(message: types.Message):
     user_modes[message.from_user.id] = 'chat'
     await message.answer('Режими ИИ фаъол аст. Саволтанро нависед')
 
 
-@dp.message(lambda message: message.text == "🎨РАСМ")
+@dp.message(lambda message: message.text == "🎨 РАСМ")
 async def say_hello(message: types.Message):
     user_modes[message.from_user.id] = 'image'
     await message.answer('Чӣ расм тасвир кардан лозим? Промптро пурра нависед:')
 
 
-@dp.message(lambda message: message.text == "🔍ҶУСТУҶӮ")
+@dp.message(lambda message: message.text == "🔍 ҶУСТУҶӮ")
 async def say_hello(message: types.Message):
     user_modes[message.from_user.id] = 'search'
     await message.answer('Чиро ҷустуҷӯ кардан лозим аст? Нависед:')
 
+@dp.message(lambda message: message.text == "👋🏻 Салом")
+async def say_hello(message: types.Message):
+    await message.answer('Салом')
 
 @dp.message()
 async def ai_response(message: types.Message):
