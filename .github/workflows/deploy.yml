@@ -15,7 +15,7 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
-          scripts: |
+          script: |
             cd /root/ai-bot
             git pull origin main
             source venv/bin/activate
