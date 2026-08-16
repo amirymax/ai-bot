@@ -20,7 +20,7 @@ def get_main_keyboard():
     builder.add(types.KeyboardButton(text="💬 ИИ ЧАТ"))
     builder.add(types.KeyboardButton(text="🎨 РАСМ"))
     builder.add(types.KeyboardButton(text="🔍 ҶУСТУҶӮ"))
-    builder.add(types.KeyboardButton(text='👋🏻 Салом'))
+    builder.add(types.KeyboardButton(text='👋🏻 Салом Алекум'))
     return builder.as_markup(resize_keyboard=True)
 
 
@@ -46,7 +46,7 @@ async def say_hello(message: types.Message):
     user_modes[message.from_user.id] = 'search'
     await message.answer('Чиро ҷустуҷӯ кардан лозим аст? Нависед:')
 
-@dp.message(lambda message: message.text == "👋🏻 Салом")
+@dp.message(lambda message: message.text == "👋🏻 Салом Алекум")
 async def say_hello(message: types.Message):
     await message.answer('Воалекум салом ака сози?')
 
